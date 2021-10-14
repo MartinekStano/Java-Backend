@@ -1,12 +1,31 @@
 package com.company;
 
 public class Student {
-    public String Name;
-    public int NumberOfStudent;
 
-    public Student(String name, int numberOfStudent) {
-        Name = name;
-        NumberOfStudent = numberOfStudent;
+    private String name;
+    private int numberOfStudent;
+    private int phoneNumber;
+    private String address;
+
+    public Student(String name, int numberOfStudent, int phoneNumber, String address) {
+        this.name = name;
+        this.numberOfStudent = numberOfStudent;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+    public String getName() {
+        return name;
     }
 
+    public int getNumberOfStudent() {
+        return numberOfStudent;
+    }
+
+    public int getPhoneNumber(){
+        return phoneNumber;
+    }
+
+    public String getAddress(){
+        return address;
+    }
 }
