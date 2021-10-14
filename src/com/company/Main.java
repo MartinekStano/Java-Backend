@@ -4,10 +4,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Student student1 = new Student("John", 2, 123456, "Legionarska 1, 01001 Zilina");
-        Student student2 = new Student("Sam", 5,123457, "Legionarska 2, 01001 Zilina");
-        System.out.println(student1.getNumberOfStudent()+", "+student1.getPhoneNumber()+", "+student1.getAddress());
-        System.out.println(student2.getNumberOfStudent()+", "+student2.getPhoneNumber()+", "+student2.getAddress());
+        Student student1 = new Student("John", 21, 23000);
+        Student student2 = new Student("Steve", 32, 40000);
+        Student student3 = new Student("Martin", 16, 2700);
 
+        Student[] people = {student1, student2, student3};
+
+        for(Student student : people)
+        {
+            System.out.println("Name: "+student.getName()+", "+"Age: "+student.getAge()+", "+"Budget: "+student.getBudget());
+        };
+        System.out.println("Budget: "+Student.ReturnBudget(people));
     }
 }

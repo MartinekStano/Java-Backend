@@ -3,29 +3,33 @@ package com.company;
 public class Student {
 
     private String name;
-    private int numberOfStudent;
-    private int phoneNumber;
-    private String address;
+    private int age;
+    private int budget;
 
-    public Student(String name, int numberOfStudent, int phoneNumber, String address) {
+    public Student(String name, int age, int budget) {
         this.name = name;
-        this.numberOfStudent = numberOfStudent;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
+        this.age = age;
+        this.budget = budget;
     }
+
     public String getName() {
         return name;
     }
 
-    public int getNumberOfStudent() {
-        return numberOfStudent;
+    public int getAge() {
+        return age;
     }
 
-    public int getPhoneNumber(){
-        return phoneNumber;
+    public int getBudget() {
+        return budget;
     }
 
-    public String getAddress(){
-        return address;
-    }
+    public static int ReturnBudget(Student[] people) {
+        int helper = 0;
+        for (Student human : people)
+        {
+            helper += human.getBudget();
+        };
+        return helper;
+    };
 }
