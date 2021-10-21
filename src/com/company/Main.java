@@ -14,6 +14,6 @@ public class Main {
         {
             System.out.println("Name: "+student.getName()+", "+"Age: "+student.getAge()+", "+"Budget: "+student.getBudget());
         };
-        System.out.println("Budget: "+Student.ReturnBudget(people));
+        System.out.println("Budget: "+Student.returnBudget(people));
     }
 }

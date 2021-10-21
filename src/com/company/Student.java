@@ -24,7 +24,7 @@ public class Student {
         return budget;
     }
 
-    public static int ReturnBudget(Student[] people) {
+    public static int returnBudget(Student[] people) {
         int helper = 0;
         for (Student human : people)
         {
