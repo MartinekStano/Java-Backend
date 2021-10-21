@@ -1,19 +1,21 @@
 package com.company;
 
+import java.awt.*;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Student student1 = new Student("John", 21, 23000);
-        Student student2 = new Student("Steve", 32, 40000);
-        Student student3 = new Student("Martin", 16, 2700);
+        Triangle triangle1 = new Triangle(3,4,5);
+        Triangle triangle2 = new Triangle(6,7,8);
 
-        Student[] people = {student1, student2, student3};
+        System.out.println("Triangle #1");
+        System.out.println("Area: "+Triangle.getArea(triangle1.getSideA(),triangle1.getSideB(),triangle1.getSideC()));
+        System.out.println("Perimeter: "+Triangle.getPerimeter(triangle1.getSideA(),triangle1.getSideB(),triangle1.getSideC()));
 
-        for(Student student : people)
-        {
-            System.out.println("Name: "+student.getName()+", "+"Age: "+student.getAge()+", "+"Budget: "+student.getBudget());
-        };
-        System.out.println("Budget: "+Student.returnBudget(people));
+        System.out.println("Triangle #2");
+        System.out.println("Area: "+Triangle.getArea(triangle2.getSideA(),triangle2.getSideB(),triangle2.getSideC()));
+        System.out.println("Perimeter: "+Triangle.getPerimeter(triangle2.getSideA(),triangle2.getSideB(),triangle2.getSideC()));
+
     }
 }
