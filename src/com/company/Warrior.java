@@ -64,6 +64,25 @@ public class Warrior {
         else if(warrior2.muscle+ warrior2.life+ warrior2.speed > warrior1.muscle +warrior1.life+ warrior1.speed)
         {
             System.out.println("Warrior2 WIN!");
+
+            System.out.println("------------------------------------");
+
+            warrior2.items.add(getTheHighestItem(warrior1));
+            warrior1.items.remove(compareItem(getTheHighestItem(warrior1), warrior1));
+            warrior1.life --;
+
+            System.out.println("Warrior1 Life: "+warrior1.life);
+            for(Item item : warrior1.items)
+            {
+                System.out.println(item.getName()+" - "+ item.getValue());
+            }
+
+            System.out.println("------------------------------------");
+            System.out.println("Warrior2 Life: "+warrior2.life);
+            for(Item item : warrior2.items)
+            {
+                System.out.println(item.getName()+" - "+ item.getValue());
+            }
         }
         else {
             System.out.println("DRAW!");
