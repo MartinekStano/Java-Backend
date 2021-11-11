@@ -17,6 +17,17 @@ public class Main extends Shiritori {
                 System.out.println();
             }
         };
+        AddIfNotExits addIfNotExits = (List<Integer> list, int a) ->{
+            if(list.contains(a))
+            {
+                System.out.println("Item is already exit in list!");
+            }
+            else
+            {
+                list.add(a);
+            }
+            printList.print(list);
+        };
         List<Integer> Array1 = new ArrayList<>();
         Array1.add(1);
         Array1.add(1);
@@ -28,10 +39,21 @@ public class Main extends Shiritori {
         Array1.add(5);
         List<Integer> Array2 = new ArrayList<>();
 
-        printList.print(Array1);
-        printList.print(Array2);
+//       printList.print(Array1);
+//       printList.print(Array2);
+
+        int a = 1;
+        int b = 8;
+
+        addIfNotExits.addIfNotExits(Array1, a);
+        System.out.println("---------------------------------------------------");
+        addIfNotExits.addIfNotExits(Array1, b);
+
     }
     interface PrintList{
         void print(List<Integer> list);
+    }
+    interface AddIfNotExits{
+        void addIfNotExits(List<Integer> list, int a);
     }
 }
