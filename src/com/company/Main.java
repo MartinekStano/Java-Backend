@@ -28,32 +28,55 @@ public class Main extends Shiritori {
             }
             printList.print(list);
         };
+
+        DeleteEvenNumberInList deleteEvenNumberInList = List::remove;
+
+        DeleteEvenNumbers deleteEvenNumbers = (List<Integer> list) -> {
+
+            for (int i = 0; list.size() >= i; i++)
+            {
+                if(list.get(i) %2 == 0)
+                {
+                   deleteEvenNumberInList.deleteNumberInList(list, i);
+                }
+            }
+            printList.print(list);
+        };
+
+
         List<Integer> Array1 = new ArrayList<>();
         Array1.add(1);
         Array1.add(1);
         Array1.add(1);
         Array1.add(2);
-        Array1.add(2);
         Array1.add(3);
         Array1.add(4);
         Array1.add(5);
+        Array1.add(12);
         List<Integer> Array2 = new ArrayList<>();
 
 //       printList.print(Array1);
 //       printList.print(Array2);
 
-        int a = 1;
-        int b = 8;
+//        int a = 1;
+//        int b = 8;
+//
+//        addIfNotExits.addIfNotExits(Array1, a);
+//        System.out.println("---------------------------------------------------");
+//        addIfNotExits.addIfNotExits(Array1, b);
 
-        addIfNotExits.addIfNotExits(Array1, a);
-        System.out.println("---------------------------------------------------");
-        addIfNotExits.addIfNotExits(Array1, b);
-
+        deleteEvenNumbers.deleteEven(Array1);
     }
     interface PrintList{
         void print(List<Integer> list);
     }
     interface AddIfNotExits{
         void addIfNotExits(List<Integer> list, int a);
+    }
+    interface DeleteEvenNumbers{
+        void deleteEven(List<Integer> list);
+    }
+    interface DeleteEvenNumberInList{
+        void deleteNumberInList(List<Integer> list, int index);
     }
 }
