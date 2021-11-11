@@ -6,19 +6,32 @@ public class Main extends Shiritori {
 
     public static void main(String[] args) {
 
-        Item item1 = new Item("goldfish", 45);
-        Item item2 = new Item("watch", 15);
-        Item item3 = new Item("dog", 53);
+        PrintList printList = (List<Integer> list) -> {
+            if(list.size() == 0)
+            {
+                System.out.println("List is empty");
+            }else{
+                for (int i : list) {
+                    System.out.print(i+", ");
+                }
+                System.out.println();
+            }
+        };
+        List<Integer> Array1 = new ArrayList<>();
+        Array1.add(1);
+        Array1.add(1);
+        Array1.add(1);
+        Array1.add(2);
+        Array1.add(2);
+        Array1.add(3);
+        Array1.add(4);
+        Array1.add(5);
+        List<Integer> Array2 = new ArrayList<>();
 
-        List<Item> items1 = new ArrayList<Item>();
-        List<Item> items2 = new ArrayList<Item>();
-        items1.add(item1);
-        items2.add(item2);
-        items2.add(item3);
-
-        Warrior warrior1 = new Warrior("warrior1",10,4,7,items1);
-        Warrior warrior2 = new Warrior("warrior2",9,5,3,items2);
-
-        Warrior.battle(warrior1, warrior2);
+        printList.print(Array1);
+        printList.print(Array2);
+    }
+    interface PrintList{
+        void print(List<Integer> list);
     }
 }
