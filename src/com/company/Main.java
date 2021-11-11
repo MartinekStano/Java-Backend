@@ -43,16 +43,26 @@ public class Main extends Shiritori {
             printList.print(list);
         };
 
+        GetEvenNumbersFromList getEvenNumbersFromList = (List<Integer> list) ->{
+          List<Integer> returnList = new ArrayList<>();
+
+            for (Integer integer : list) {
+                if (integer % 2 == 0) {
+                    returnList.add(integer);
+                }
+            }
+          return returnList;
+        };
 
         List<Integer> Array1 = new ArrayList<>();
         Array1.add(1);
         Array1.add(1);
         Array1.add(1);
         Array1.add(2);
+        Array1.add(2);
         Array1.add(3);
         Array1.add(4);
         Array1.add(5);
-        Array1.add(12);
         List<Integer> Array2 = new ArrayList<>();
 
 //       printList.print(Array1);
@@ -65,7 +75,9 @@ public class Main extends Shiritori {
 //        System.out.println("---------------------------------------------------");
 //        addIfNotExits.addIfNotExits(Array1, b);
 
-        deleteEvenNumbers.deleteEven(Array1);
+//        deleteEvenNumbers.deleteEven(Array1);
+        printList.print(Array1);
+        System.out.println(getEvenNumbersFromList.getEvenNumbers(Array1));
     }
     interface PrintList{
         void print(List<Integer> list);
@@ -78,5 +90,8 @@ public class Main extends Shiritori {
     }
     interface DeleteEvenNumberInList{
         void deleteNumberInList(List<Integer> list, int index);
+    }
+    interface GetEvenNumbersFromList{
+        List<Integer> getEvenNumbers(List<Integer> list);
     }
 }
