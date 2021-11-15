@@ -6,36 +6,25 @@ public class Main extends Shiritori {
 
     public static void main(String[] args) {
 
-        PrintList printList = (List<Integer> list) -> {
-            if(list.size() == 0)
-            {
-                System.out.println("List is empty");
-            }else{
-                for (int i : list) {
-                    System.out.print(i+", ");
-                }
-                System.out.println();
-            }
+        GetWholeBudget getWholeBudget = (List<Person> personList) -> {
+            Integer budget = personList.stream()
+                    .map(Person::getBudget)
+                    .reduce(0, Integer::sum);
+            System.out.println(budget);
         };
-        MultiplyByLength multiplyByLength = (List<Integer> list) -> {
-            List<Integer> listOfEvenNumbers = new ArrayList<>();
+        Person person1 = new Person("John", 21, 23000 );
+        Person person2 = new Person("Steve", 32, 40000);
+        Person person3 = new Person("Martin", 16, 2700);
 
-            list.stream().map(i->i*list.size()).forEach(listOfEvenNumbers::add);
-            System.out.println(listOfEvenNumbers);
-        };
+        List<Person> personList = new ArrayList<>();
 
-        List<Integer> Array1 = new ArrayList<>();
-        Array1.add(2);
-        Array1.add(3);
-        Array1.add(1);
-        Array1.add(0);
+        personList.add(person1);
+        personList.add(person2);
+        personList.add(person3);
 
-        multiplyByLength.multiplyList(Array1);
+        getWholeBudget.wholeBudget(personList);
     }
-    interface PrintList{
-        void print(List<Integer> list);
-    }
-    interface MultiplyByLength {
-        void multiplyList(List<Integer> list);
+    interface GetWholeBudget{
+        void wholeBudget(List<Person> personList);
     }
 }
