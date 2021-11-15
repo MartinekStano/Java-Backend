@@ -6,11 +6,11 @@ public class Main extends Shiritori {
 
     public static void main(String[] args) {
 
-        GetWholeBudget getWholeBudget = (List<Person> personList) -> {
-            Integer budget = personList.stream()
-                    .map(Person::getBudget)
-                    .reduce(0, Integer::sum);
-            System.out.println(budget);
+        ContainsCharInList containsCharInList = (List<Person> personList) ->{
+
+        boolean result = personList.stream()
+                            .anyMatch(e -> e.getName().contains("a"));
+            System.out.println(result);
         };
         Person person1 = new Person("John", 21, 23000 );
         Person person2 = new Person("Steve", 32, 40000);
@@ -22,9 +22,9 @@ public class Main extends Shiritori {
         personList.add(person2);
         personList.add(person3);
 
-        getWholeBudget.wholeBudget(personList);
+        containsCharInList.containsChar(personList);
     }
-    interface GetWholeBudget{
-        void wholeBudget(List<Person> personList);
+    interface ContainsCharInList{
+        void containsChar(List<Person> personList);
     }
 }
