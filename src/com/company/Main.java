@@ -11,12 +11,11 @@ public class Main extends Shiritori {
             {
                 System.out.println("List is empty");
             }else{
-                for (int i : list) {
-                    System.out.print(i+", ");
-                }
+                list.forEach(System.out::println);
                 System.out.println();
             }
         };
+
         List<Integer> Array1 = new ArrayList<>();
         Array1.add(1);
         Array1.add(1);
@@ -28,8 +27,8 @@ public class Main extends Shiritori {
         Array1.add(5);
         List<Integer> Array2 = new ArrayList<>();
 
-        printList.print(Array1);
-        printList.print(Array2);
+      printList.print(Array1);
+      printList.print(Array2);
     }
     interface PrintList{
         void print(List<Integer> list);
