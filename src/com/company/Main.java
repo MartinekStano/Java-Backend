@@ -16,6 +16,6 @@ public class Main {
         hashSet.add(4);
         hashSet.add(5);
 
-        hashSet.forEach(e -> System.out.println(e));
+        hashSet.forEach(System.out::println);
     }
 }
