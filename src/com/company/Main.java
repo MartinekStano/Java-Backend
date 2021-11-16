@@ -28,6 +28,7 @@ public class Main {
         addNewItemIfDoesntExit(hashMap, value2, key2);
         showHashMap(hashMap);
     }
+
     public static void addNewItemIfDoesntExit(HashMap<Integer, String> hashMap, String value, Integer key)
     {
         if(!hashMap.containsKey(key))
