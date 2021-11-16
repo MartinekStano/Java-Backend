@@ -6,16 +6,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        HashSet<Integer> hashSet = new HashSet<>();
-        hashSet.add(1);
-        hashSet.add(1);
-        hashSet.add(1);
-        hashSet.add(2);
-        hashSet.add(2);
-        hashSet.add(3);
-        hashSet.add(4);
-        hashSet.add(5);
+        HashMap<String, Integer> hashMap = new HashMap<>();
 
-        hashSet.forEach(System.out::println);
+        hashMap.put("Red", 1);
+        hashMap.put("Green", 2);
+        hashMap.put("Black", 3);
+        hashMap.put("White", 4);
+
+        System.out.println("Keys: ");
+        for(String i : hashMap.keySet() )
+        {
+            System.out.print(i+", ");
+        }
+        System.out.println();
+        System.out.println("Values: ");
+        for (Integer i : hashMap.values())
+        {
+            System.out.print(i+", ");
+        }
+
     }
 }
