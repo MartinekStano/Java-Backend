@@ -1,4 +1,8 @@
-package com.company;
+package com.company.model;
+
+import com.company.model.Employee;
+import com.company.model.EnumEmployee;
+
 public class Teacher extends Employee {
 
 
