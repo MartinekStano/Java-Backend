@@ -1,24 +1,26 @@
 package com.company;
 
-import java.time.LocalDate;
-import java.util.Date;
+public abstract class Employee {
 
-public class Employee {
-    private String name;
-    private String surname;
-    private LocalDate dateOfBirth;
-    JobPosition jobPosition;
+    protected float salary;
+    protected int bonus;
+    protected EnumEmployee job;
 
-    public Employee(String name, String surname, String dateOfBirth, JobPosition jobPosition)
-    {
-        this.name = name;
-        this.surname = surname;
-        //this.dateOfBirth = dateOfBirth;
-        this.jobPosition = jobPosition;
+    public Employee(float salary, int bonus, EnumEmployee job) {
+        this.salary = salary;
+        this.bonus = bonus;
+        this.job = job;
     }
-    public String getName() {return name;}
-    public String getSurname() {return surname;}
-    //public Date getDateOfBirth() {return dateOfBirth;}
-    public JobPosition getJobPosition() {return jobPosition;}
-}
 
+    public float getSalary() {
+        return salary;
+    }
+
+    public int getBonus() {
+        return bonus;
+    }
+    public void getInfo()
+    {
+        System.out.println(job+"'s salary is "+salary+ " and bonus is "+bonus);
+    }
+}
